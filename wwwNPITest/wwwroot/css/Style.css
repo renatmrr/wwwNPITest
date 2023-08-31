@@ -1,0 +1,62 @@
+﻿.container {
+    display: flex;
+    flex-wrap: wrap
+}
+
+.overall {
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+    border: 1px solid black;
+}
+
+.info {
+    order: 1;
+    flex-shrink: 3;
+    width: 30%;
+    display: grid;
+}
+
+.info2 {
+    order: 2;
+    width: 60%;
+    display: grid;
+    height: 550px;
+    position: sticky;
+    top: 20px;
+}
+
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+    grid: fit-content();
+    font-size: 13px;
+}
+
+    .table th {
+        font-weight: bold;
+        padding: 5px;
+        background: #efefef;
+        border: 1px solid #dddddd;
+    }
+
+    .table td {
+        border: 1px solid #dddddd;
+        padding: 5px;
+    }
+
+.pagination {
+    display: inline-block;
+}
+
+    .pagination a {
+        float: left;
+        padding: 8px 16px;
+    }
+
+.total_records {
+    display: flex;
+    justify-content: center;
+}
