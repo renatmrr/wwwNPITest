@@ -28,10 +28,10 @@ static void Generator(WebApplication app)
 
     Data.Parametrs parametrs = new ()
     {
-        CountProject = 50,
-        CountDesignObject = 10,
-        CountDocumentations = 5,
-        MaxLevel = 10
+        CountProject = 20, //генератор записей в табл Проекты компании
+        CountDesignObject = 10,//генератор записей в табл Объекты проектирования 
+        CountDocumentations = 5,//генератор записей в табл документы  
+        MaxLevel = 10//макс уровень объекта проектирования 
     };
 
     var cr =  new Data.Generator(db).Start(parametrs);
