@@ -1,6 +1,8 @@
 ﻿using JSTable.Model;
+using JSTable.Model.ObjectsDesign;
+using JSTable.Model.ProgectsCompany;
+using JSTable.Model.ProjectCompanyGeneral;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace wwwNPITest.Controllers
 {

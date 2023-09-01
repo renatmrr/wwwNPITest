@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace JSTable.Model
+namespace JSTable.Model.ProgectsCompany
 {
     public class ProjectCompany : Default<DB.Model.ProjectCompany.ProjectCompany, JsProjectCompany>
     {
@@ -14,13 +14,13 @@ namespace JSTable.Model
          };
 
         public override void Select() =>
-        
+
             Items = from p in Table
-                    
-                    select new JsProjectCompany(p.Id, p.Code, p.Name, 
-                    p.DesignObjects.Select(l=>new DesignObject(l.Id,l.Code,l.Name,l.Level)));
-        
-        
+
+                    select new JsProjectCompany(p.Id, p.Code, p.Name,
+                    p.DesignObjects.Select(l => new DesignObject(l.Id, l.Code, l.Name, l.Level)));
+
+
 
     }
 }

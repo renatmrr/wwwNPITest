@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JSTable.Model.ProjectCompanyGeneral;
 
-namespace JSTable.Model
+namespace JSTable.Model.ObjectsDesign
 {
     public class ObjectDesign : Default<DB.Model.ProjectCompany.DesignObject.DesignObject, JsProjectCompanyGeneral>
     {
@@ -12,7 +13,7 @@ namespace JSTable.Model
         public override void Select() =>
 
            Items =
-              
+
                from o in Table
                from d in o.Documentations
                select new JsProjectCompanyGeneral(
@@ -29,7 +30,7 @@ namespace JSTable.Model
 
        Items = Parametrs.IntSortCol_0 switch
        {
-          // 0 => Parametrs.Asc ? Items.OrderBy(c => c.Id) : Items.OrderByDescending(c => c.Id),
+           // 0 => Parametrs.Asc ? Items.OrderBy(c => c.Id) : Items.OrderByDescending(c => c.Id),
            0 => Parametrs.Asc ? Items.OrderBy(c => c.Code) : Items.OrderByDescending(c => c.Code),
            1 => Parametrs.Asc ? Items.OrderBy(c => c.CodeObject) : Items.OrderByDescending(c => c.CodeObject),
            2 => Parametrs.Asc ? Items.OrderBy(c => c.Model) : Items.OrderByDescending(c => c.Model),

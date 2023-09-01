@@ -1,6 +1,5 @@
 using DB.Model;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
 using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -48,7 +47,7 @@ static void Generator(WebApplication app)
 
     var cr =  new Data.Generator(db).Start(parametrs);
 
-    Debug.WriteLine($"add record {cr}");
+    Console.WriteLine($"add record {cr}");
 
     
 }

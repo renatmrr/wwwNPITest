@@ -1,10 +1,10 @@
-﻿namespace JSTable.Model
+﻿namespace JSTable.Model.ProgectsCompany
 {
-    public record DesignObject (int Id, string Code,string Name, int Level);
-  
+    public record DesignObject(int Id, string Code, string Name, int Level);
+
     public record JsProjectCompany
     {
-        public JsProjectCompany (int id, string code, string name, 
+        public JsProjectCompany(int id, string code, string name,
             IEnumerable<DesignObject> designObjects)
         {
             Id = id;
@@ -22,8 +22,8 @@
 
         private IEnumerable<DesignObject> DesignObjects { get; set; } = null!;
 
-        public IEnumerable< IGrouping<int, DesignObject>> GDesignObjects => 
-            DesignObjects.OrderBy(l=>l.Level).GroupBy(l => l.Level);
+        public IEnumerable<IGrouping<int, DesignObject>> GDesignObjects =>
+            DesignObjects.OrderBy(l => l.Level).GroupBy(l => l.Level);
     }
 
 }

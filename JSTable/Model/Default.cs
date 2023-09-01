@@ -13,13 +13,12 @@ namespace JSTable.Model
 
         public abstract void Sorting();
 
-        public JsTableResult Res => new()
-        {
-            StrEcho = Parametrs.StrEcho,
-            IntTotalRecords = Items.Count(),
-            IntTotalDisplayRecords = Items.Count(),
-            Data = Items.Skip(Parametrs.IntDisplayStart).Take(Parametrs.IntDisplayLength).ToArray()
-        };
+        public JsTableResult Res => new(
+            Parametrs.StrEcho,
+            Items.Count(),
+            Items.Count(),
+            Items.Skip(Parametrs.IntDisplayStart).Take(Parametrs.IntDisplayLength).ToArray()
+        );
 
         public JsTableResult Result { get
             {

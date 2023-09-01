@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JSTable.Model
 {
-    public class JsTableParametrs
+    public record JsTableParametrs
     {
         public string? StrEcho { get; set; }
         public string? StrSearch { get; set; }

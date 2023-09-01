@@ -1,4 +1,4 @@
-﻿namespace JSTable.Model
+﻿namespace JSTable.Model.ProjectCompanyGeneral
 {
     public class ProjectCompanyGeneral : Default<DB.Model.ProjectCompany.ProjectCompany, JsProjectCompanyGeneral>
     {
@@ -6,7 +6,7 @@
 
         Items = Parametrs.IntSortCol_0 switch
         {
-         //   0 => Parametrs.Asc ? Items.OrderBy(c => c.Id) : Items.OrderByDescending(c => c.Id),
+            //   0 => Parametrs.Asc ? Items.OrderBy(c => c.Id) : Items.OrderByDescending(c => c.Id),
             0 => Parametrs.Asc ? Items.OrderBy(c => c.Code) : Items.OrderByDescending(c => c.Code),
             1 => Parametrs.Asc ? Items.OrderBy(c => c.CodeObject) : Items.OrderByDescending(c => c.CodeObject),
             2 => Parametrs.Asc ? Items.OrderBy(c => c.Model) : Items.OrderByDescending(c => c.Model),
