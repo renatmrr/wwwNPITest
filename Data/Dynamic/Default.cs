@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Data.Dynamic
+﻿namespace Data.Dynamic
 {
     internal class Default<T> where T : class
     {
@@ -32,8 +26,6 @@ namespace Data.Dynamic
                 values[i] = Value;
 
             });
-
-           // for (int i = 0; i < values.Length; i++) values[i] = Value;
 
             return values;
         }
