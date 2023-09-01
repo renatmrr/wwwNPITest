@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JSTable.Model
+﻿namespace JSTable.Model
 {
     public record JsTableParametrs
     {
+        public int IntId { get; set; }
         public string? StrEcho { get; set; }
         public string? StrSearch { get; set; }
         public int IntDisplayLength { get; set; }

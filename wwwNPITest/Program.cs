@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews()
+builder.Services.AddControllers()
     .AddJsonOptions(x =>
                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
@@ -14,20 +14,9 @@ var app = builder.Build();
 
 Generator(app);
 
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapControllerRoute(
-    name: "Api",
-    pattern: "api/{controller}/{action}/{id}"
-);
 app.UseDefaultFiles();
 app.UseStaticFiles();
-
-/*
-app.MapGet("/", () => "Hello World!");
-*/
+app.MapControllers();
 app.Run();
 
 static void Generator(WebApplication app)

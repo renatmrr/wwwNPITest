@@ -1,5 +1,5 @@
 ﻿class JsDataParametrs {
-    constructor(strEcho, strSearch, intDisplayLength,
+    constructor(intId,strEcho, strSearch, intDisplayLength,
         intDisplayStart, intColumns, intSortCol_0, strSortDir_0,
         intSortingCols, strColumns) {
         this.strEcho = strEcho;
@@ -11,18 +11,20 @@
         this.strSortDir_0 = strSortDir_0;
         this.intSortingCols = intSortingCols;
         this.strColumns = strColumns;
+        this.intId = intId
     }
 
 }
 
-const param = new JsDataParametrs("", "", 10, 0, 4, -1, 'asc', 10, ',,,');
-const paramT = new JsDataParametrs("", "", 1000, 0, 4, -1, 'asc', 10, ',,,');
+const param = new JsDataParametrs(0,"", "", 10, 0, 4, -1, 'asc', 10, ',,,');
 
-const linkGetProjectsCompany = '/Home/GetProjectsCompany/' //'/Home/GetProjectsCompany/';
+const paramT = new JsDataParametrs(0,"", "", 1000, 0, 4, -1, 'asc', 10, ',,,');
 
-const linkGetProjectsCompanyTable = '/Home/GetProjectsCompanyTable/';
+const linkGetProjectsCompany = 'api/Values/GetProjectsCompany/' //'/Home/GetProjectsCompany/';
 
-const linkGetObjectDesignTable = '/Home/GetObjectDesignTable/';
+const linkGetProjectsCompanyTable = 'api/Values/GetProjectsCompanyTable/';
+
+const linkGetObjectDesignTable = 'api/Values/GetObjectDesignTable/';
 
 getData(linkGetProjectsCompany, 1, "treeProjectCompany");
 
@@ -104,10 +106,6 @@ function rowTable(r) {
     const tr = document.createElement("tr");
     tr.setAttribute("data-rowid", r.id);
    
-   /* const idTd = document.createElement("td");
-    idTd.append(r.id);
-    tr.append(idTd);*/
-
     const codeTd = document.createElement("td");
     codeTd.append(r.code);
     tr.append(codeTd);
@@ -150,7 +148,8 @@ function rowTreeProjects(line, text, id, link) {
         nameSummary.setAttribute("data-id", id);
         nameSummary.onclick = function ()
         {
-            getData(link + id, 1, "tableProjectCompany")
+            param.intId = id;
+            getData(link, 1, "tableProjectCompany")
         };
     }
 

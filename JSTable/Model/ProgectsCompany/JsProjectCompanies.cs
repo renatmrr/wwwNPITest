@@ -2,7 +2,7 @@
 {
     public record DesignObject(int Id, string Code, string Name, int Level);
 
-    public record JsProjectCompany
+    public class JsProjectCompany
     {
         public JsProjectCompany(int id, string code, string name,
             IEnumerable<DesignObject> designObjects)

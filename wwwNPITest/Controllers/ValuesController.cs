@@ -27,23 +27,23 @@ namespace wwwNPITest.Controllers
                }.Result);
 
         [HttpPost("GetProjectsCompanyTable")]
-        public IResult GetProjectsCompanyTable([FromBody] JsTableParametrs param, int id) =>
+        public IResult GetProjectsCompanyTable([FromBody] JsTableParametrs param) =>
          Results.Json(
              new ProjectCompanyGeneral
              {
                  Parametrs = param,
                  Table = _context.ProjectCompanies
-                 .Where(l => l.Id == id)
+                 .Where(l => l.Id == param.IntId)
              }.Result);
         
         [HttpPost("GetObjectDesignTable")]
-        public IResult GetObjectDesignTable([FromBody] JsTableParametrs param, int id) =>
+        public IResult GetObjectDesignTable([FromBody] JsTableParametrs param) =>
           Results.Json(
               new ObjectDesign
               {
                   Parametrs = param,
                   Table = _context.DesignObjects
-                  .Where(l => l.Id == id)
+                  .Where(l => l.Id == param.IntId)
               }.Result);
 
     }
