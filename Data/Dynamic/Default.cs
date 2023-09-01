@@ -23,7 +23,7 @@ namespace Data.Dynamic
 
              _ => 0
          };
-        public List<T> Generation()
+        public IEnumerable<T> Generation()
         {
             var values = new T[GetCount];
 
@@ -35,7 +35,7 @@ namespace Data.Dynamic
 
            // for (int i = 0; i < values.Length; i++) values[i] = Value;
 
-            return values.ToList();
+            return values;
         }
     }
 }

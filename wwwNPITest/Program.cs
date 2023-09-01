@@ -28,9 +28,9 @@ static void Generator(WebApplication app)
 
     Data.Parametrs parametrs = new ()
     {
-        CountProject = 500,
-        CountDesignObject = 30,
-        CountDocumentations = 20,
+        CountProject = 50,
+        CountDesignObject = 10,
+        CountDocumentations = 5,
         MaxLevel = 10
     };
 
