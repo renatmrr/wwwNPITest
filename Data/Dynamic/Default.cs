@@ -27,7 +27,13 @@ namespace Data.Dynamic
         {
             var values = new T[GetCount];
 
-            for (int i = 0; i < values.Length; i++) values[i] = Value;
+            Parallel.For(0, values.Length,(i) =>
+            {
+                values[i] = Value;
+
+            });
+
+           // for (int i = 0; i < values.Length; i++) values[i] = Value;
 
             return values.ToList();
         }

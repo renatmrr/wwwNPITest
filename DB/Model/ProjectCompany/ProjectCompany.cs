@@ -6,6 +6,6 @@
 
         public required string Name { get; init; }
 
-        public List<DesignObject.DesignObject> DesignObjects { get; set; } = null!;
+        public IEnumerable<DesignObject.DesignObject> DesignObjects { get; set; } = null!;
     }
 }

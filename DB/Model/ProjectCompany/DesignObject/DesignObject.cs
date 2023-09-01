@@ -10,6 +10,6 @@
 
         public ProjectCompany ProjectCompany { get; set; } = null!;
 
-        public required List<Documentation.Documentation> Documentations { get; init; }
+        public required IEnumerable<Documentation.Documentation> Documentations { get; init; }
     }
 }
