@@ -166,7 +166,10 @@ function rowTreeProjects(line, text, id, link) {
 
         line.forEach(r => details.append(rowTreeProjects(r, r.name + '(' + r.code + ')', r.id, linkGetObjectDesignTable)));
     }
-
+    if (line.documettations != null) {
+        line.documettations.forEach(r => details.append(rowTreeProjects(r, r.model + " " + r.number)));
+    
+    }
     return ul;
 }
 function OrderByInit(link, tableId) {

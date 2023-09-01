@@ -1,6 +1,9 @@
 ﻿namespace JSTable.Model.ProgectsCompany
 {
-    public record DesignObject(int Id, string Code, string Name, int Level);
+    public record DesignObject(int Id, string Code, string Name, int Level, 
+        IEnumerable<Documettation> Documettations);
+
+    public record Documettation (int Id, string Model, int Number);
 
     public class JsProjectCompany
     {
